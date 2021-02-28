@@ -13,6 +13,7 @@ else:
 
 numeroTelefonico = '(188)1456719'
 patronN= '^\(([1-9]{3,})\)[0-9]{7}$'
+# [PV] poner entre llaves {9,} indica que pueden ser 9 o mas caracteres deberia ser {9}
 patronSP = '^[1-9]{1}[0-9]{9,}$'
 
 validaNCP = re.match(patronN, numeroTelefonico)
