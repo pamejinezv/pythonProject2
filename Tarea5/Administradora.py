@@ -1,4 +1,6 @@
-from Tarea5.InterfazT5 import *
+# from Tarea5.InterfazT5 import *
+# [PV] No es necesario Tarea5
+from InterfazT5 import *
 from mongoengine import *
 import re
 import sys

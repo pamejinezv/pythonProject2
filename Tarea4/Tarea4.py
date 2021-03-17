@@ -15,7 +15,7 @@ class estudiantes(Document):
 
 class administradora:
 
-    def guardar():
+    def guardar(self):  # [PV] falta el parametro self en todos los metodos
         nombre = input('Escribe el nombre')
         correo = input('Escribe el correo')
         passw = input('Escribe la contrasenia')
@@ -35,13 +35,13 @@ class administradora:
 
         print('Datos almacenados con exito')
 
-    def eliminar():
+    def eliminar(self):  # [PV] falta el parametro self en todos los metodos
         nomAlumno = input('Escribe el nombre del alumno a eliminar')
         post = estudiantes.objects(nombre=nomAlumno)
         post.delete()
         print('Datos eliminados con exito')
 
-    def modificar():
+    def modificar(self):  # [PV] falta el parametro self en todos los metodos
         nomAlumno = input('Escribe el nombre del alumno a modificar')
         correo = input('Escribe el correo')
         passw = input('Escribe la contrasenia')
@@ -53,12 +53,12 @@ class administradora:
         student.update(**fields)
         print('Datos actualizados con exito')
 
-    def mostrarTodo():
+    def mostrarTodo(self):  # [PV] falta el parametro self en todos los metodos
         post = estudiantes.objects.all_fields()
         for c in post:
             print('\nNombre:', c.nombre, '\nCorreo: ', c.correo, '\nPassword: ', c.contrasenia)
 
-    def menu():
+    def menu(self):  # [PV] falta el parametro self en todos los metodos
         while True:
             print('-----MENU-----')
             print('**Opcion 1: AGREGAR**')
@@ -78,6 +78,8 @@ class administradora:
                 administradora.modificar()
             elif opcion == 5:
                 break
+
+
 if __name__ == '__main__':
 
    administradora.menu()

@@ -9,6 +9,7 @@ class Estudiante():
         self.correo = correo
         self.contrasenia = contrasenia
 
+        # [PV] Los metodos deben estar al mismo nivel de __init__
         def setNombre(self, nombre):
             self.nombre = nombre
         def getNombre(self):
@@ -30,7 +31,7 @@ objEstudiantes5 = Estudiante('Esmeralda', 'esmerg@gmail.com', 'mascota')
 estudiantes = [objEstudiantes1, objEstudiantes2, objEstudiantes3, objEstudiantes4, objEstudiantes5 ]
 
 
-
+# [PV] Agrega una lista al archivo, es prefenten objeto a objeto
 def agregarEstudiante():
 #---------Agregar--------------
     archivo = open('students.db', 'wb')
@@ -39,15 +40,16 @@ def agregarEstudiante():
     #print(bin_estudiantes)
     archivo.close()
 
+# [PV] La lectura obtiene una lista, es prefenten objeto a objeto
 def leerEstudiante():
 #-------Leer-----------------
     file = open('students.db', 'rb')
     file.seek(0)
     unpickler = pickle.Unpickler(file)
     leerEstudiantes = unpickler.load()
-    print(leerEstudiantes)
+    print(leerEstudiantes)   # [PV] Impresion de lista
     file.close()
-    for c in leerEstudiantes:
+    for c in leerEstudiantes:  # [PV] Impresion de elementos de la lista
         print('\nNombre:', c.nombre, '\nCorreo: ', c.correo, '\nPassword: ', c.contrasenia)
 
 def modificar():
